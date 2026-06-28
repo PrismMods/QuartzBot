@@ -77,8 +77,8 @@ app.post("/webhook", async (req, res) => {
 
         const channel = await client.channels.fetch(CHANNEL_ID);
 
-        const ROLE_ID = "<@&1501202364302889142>";
-        const PRERELEASE_ROLE_ID = "<@&1520786654238081094>";
+        const ROLE_ID = "1501202364302889142";
+        const PRERELEASE_ROLE_ID = "1520786654238081094";
 
         const pingRole = release.prerelease ? PRERELEASE_ROLE_ID : ROLE_ID;
 
