@@ -35,8 +35,8 @@ app.post("/webhook", async (req, res) => {
     const release = req.body.release;
     const repo = req.body.repository;
 
-    const melonAsset = release.assets?.[0];
-    const ummAsset = release.assets?.[1];
+    const melonAsset = release.assets?.find(a => a.name === "Quartz.zip");
+    const ummAsset = release.assets?.find(a => a.name === "QuartzUmm.zip");
 
     const embed = new EmbedBuilder()
         .setTitle(release.prerelease ? "🧪 New Pre-release!" : "🚀 New Update!")
