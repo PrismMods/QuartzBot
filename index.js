@@ -49,7 +49,7 @@ app.post("/webhook", async (req, res) => {
         )
         .setColor(release.prerelease ? 0xffa500 : 0x5865f2) // orange for prerelease, purple for stable
         .setTimestamp(new Date(release.published_at))
-        .setFooter({ text: `${repo.owner.login} > ${repo.name}` });
+        .setFooter({ text: `${repo.name} > JRP` });
 
     const buttons = new ActionRowBuilder().addComponents(
         ...(melonAsset ? [
