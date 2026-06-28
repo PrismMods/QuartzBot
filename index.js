@@ -1,6 +1,6 @@
 const express = require("express");
-const { Client, GatewayIntentBits, EmbedBuilder } = require("discord.js");
 const crypto = require("crypto");
+const { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 
 const app = express();
 app.use(express.json());
@@ -8,7 +8,7 @@ app.use(express.json());
 // Config — use environment variables in production
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const CHANNEL_ID = process.env.DISCORD_CHANNEL_ID;
-const GITHUB_SECRET = process.env.GITHUB_WEBHOOK_SECRET; // optional but recommended
+const GITHUB_SECRET = process.env.GITHUB_WEBHOOK_SECRET;
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -26,13 +26,8 @@ function verifySignature(req, secret) {
 }
 
 app.post("/webhook", async (req, res) => {
-    if (GITHUB_SECRET && !verifySignature(req, GITHUB_SECRET)) {
-        return res.sendStatus(403);
-    }
-
     const event = req.headers["x-github-event"];
 
-    // Only handle release events that are published
     if (event !== "release" || req.body.action !== "published") {
         return res.sendStatus(200);
     }
@@ -40,22 +35,59 @@ app.post("/webhook", async (req, res) => {
     const release = req.body.release;
     const repo = req.body.repository;
 
+    const melonAsset = release.assets?.[0];
+    const ummAsset = release.assets?.[1];
+
     const embed = new EmbedBuilder()
-        .setTitle(`🚀 ${repo.full_name} — ${release.tag_name}`)
-        .setURL(release.html_url)
-        .setDescription(release.body?.slice(0, 4096) || "No release notes provided.")
-        .addFields(
-            { name: "Version", value: release.tag_name, inline: true },
-            { name: "Author", value: release.author.login, inline: true },
-            { name: "Pre-release", value: release.prerelease ? "Yes" : "No", inline: true }
+        .setTitle(release.prerelease ? "🧪 New Pre-release!" : "🚀 New Update!")
+        .setDescription(
+            `**${release.name || release.tag_name}**\n\n` +
+            `📦 **Download**\n` +
+            (melonAsset ? `\`${melonAsset.name}\` — MelonLoader\n` : "") +
+            (ummAsset ? `\`${ummAsset.name}\` — UMM\n` : "") +
+            `\n📋 **Changelog**\n${release.body || "No changelog provided."}`
         )
-        .setColor(release.prerelease ? 0xffa500 : 0x2ea043)
+        .setColor(release.prerelease ? 0xffa500 : 0x5865f2) // orange for prerelease, purple for stable
         .setTimestamp(new Date(release.published_at))
-        .setFooter({ text: repo.full_name });
+        .setFooter({ text: `${repo.owner.login} > ${repo.name}` });
+
+    const buttons = new ActionRowBuilder().addComponents(
+        ...(melonAsset ? [
+            new ButtonBuilder()
+                .setLabel("Download (MelonLoader)")
+                .setEmoji("⬇️")
+                .setStyle(ButtonStyle.Link)
+                .setURL(melonAsset.browser_download_url)
+        ] : []),
+        ...(ummAsset ? [
+            new ButtonBuilder()
+                .setLabel("Download (UMM)")
+                .setEmoji("⬇️")
+                .setStyle(ButtonStyle.Link)
+                .setURL(ummAsset.browser_download_url)
+        ] : []),
+        new ButtonBuilder()
+            .setLabel("View on GitHub")
+            .setEmoji("🔗")
+            .setStyle(ButtonStyle.Link)
+            .setURL(release.html_url)
+    );
 
     try {
+
         const channel = await client.channels.fetch(CHANNEL_ID);
-        await channel.send({ embeds: [embed] });
+
+        const ROLE_ID = "<@&1501202364302889142>";
+        const PRERELEASE_ROLE_ID = "<@&1520786654238081094>";
+
+        const pingRole = release.prerelease ? PRERELEASE_ROLE_ID : ROLE_ID;
+
+        await channel.send({
+            content: `<@&${pingRole}>`,
+            embeds: [embed],
+            components: [buttons]
+        });
+
         res.sendStatus(200);
     } catch (err) {
         console.error("Failed to send message:", err);
