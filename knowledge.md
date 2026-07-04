@@ -149,3 +149,13 @@ A: It's alpha software. Report it in the Discord (https://discord.gg/mAzAghu5Xq)
 
 **Q: I can't reposition ___.**
 A: It's probably in the "Reorganize" menu. In the "Overlay" tab above on top.
+
+# English to Korean Translation words.
+Reorganize: 재배치
+Keybind: 키바인드
+Discord: 디코
+Quartz: 쿼츠
+Toggle Menu Keybind: 메뉴 토글 키
+Gameplay: 게임플레이
+Overlay: 오버레이
+Visual: 비쥬얼
