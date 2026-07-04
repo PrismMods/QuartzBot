@@ -1,11 +1,18 @@
 {
-    "name": "github-release-bot",
-    "version": "1.0.0",
+    "name": "quartz-bot",
+    "version": "2.0.0",
+    "description": "Quartz Discord bot: GitHub release announcements + AI chat (OpenRouter + Postgres)",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
     "engines": {
         "node": ">=18"
     },
     "dependencies": {
         "discord.js": "^14.19.0",
-        "express": "^4.18.0"
+        "dotenv": "^16.4.5",
+        "express": "^4.18.0",
+        "pg": "^8.12.0"
     }
 }
