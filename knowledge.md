@@ -1,7 +1,7 @@
 # Quartz Mod — Knowledge Base
 
 > The bot reads this file to answer questions. Facts pulled from the Quartz source.
-> Current version: v2.0.0 (alpha). Repo: https://github.com/Quaaartz/Quartz
+> Current version: v2.0.0 (alpha). Repo: https://github.com/QuartzTeam/Quartz
 > Discord: https://discord.gg/mAzAghu5Xq
 
 ## Overview
@@ -13,16 +13,16 @@ A: An all-in-one mod for the rhythm game *A Dance of Fire and Ice* (ADOFAI). It 
 A: koren and sbrothers7 (and more contributors). It's a v2 rewrite of koren's original "KorenResourcePack".
 
 **Q: What version is it / is it stable?**
-A: v2.0.0, currently in alpha (alpha 53 at time of writing). Expect bugs and changes.
+A: v2.0.0, currently in alpha (alpha 63 at time of writing). Expect bugs and changes.
 
 **Q: Where do I download it?**
-A: GitHub releases: https://github.com/Quaaartz/Quartz/releases/latest
+A: GitHub releases: https://github.com/QuartzTeam/Quartz/releases/latest
 
 **Q: Is it free?**
-A: Yes. It's open source on GitHub.
+A: Yes. It's open source on GitHub with the GPL-3.0 license.
 
 **Q: Where do I get support / report bugs?**
-A: The Discord server: https://discord.gg/mAzAghu5Xq , or GitHub issues.
+A: The Discord server: https://discord.gg/mAzAghu5Xq, or GitHub issues.
 
 ## Install / Setup
 
@@ -33,7 +33,8 @@ A: Two builds ship each release. `Quartz.zip` is the MelonLoader build (recommen
 A: 1) Download the modlist.org app and Quartz. 2) If you don't have MelonLoader, install it via the modlist.org app. 3) In the app press "Install Mod From File" and pick `Quartz.zip`. Done. (Manual alternative: drop `Quartz.zip` contents into your ADOFAI folder.)
 
 **Q: How do I install on Mac?**
-A: There's an auto installer (UMMInstall) for convenience. In the modlist.org app, use the "Copy Native Launch Options" button on the Installed tab and paste it into your Steam launch arguments. WARNING: on Mac the install can replace the whole folder instead of adding files — drag the files in manually to be safe.
+A: There's an auto installer (UMMInstall) for convenience. If not using the auto installer, use the modlist app. Make sure to use the "Copy Native Launch Options" button on the Installed tab and paste it into your Steam launch arguments if you're using the modlist app.
+WARNING: If installing manually, clicking replace replaces the whole folder instead of adding files — drag the files in manually to be safe.
 
 **Q: How do I install the UnityModManager build?**
 A: Set up UMM for ADOFAI first, then in the UMM installer use "Install mod" and pick `QuartzUmm.zip` (or extract the `Quartz` folder into your UMM mods dir). Open settings with the mod's in-game keybind — the UMM IMGUI panel is NOT used.
@@ -145,3 +146,6 @@ A: It needs your own Discord OAuth app — set the client id + token in the Game
 
 **Q: Something's broken / I found a bug.**
 A: It's alpha software. Report it in the Discord (https://discord.gg/mAzAghu5Xq) or on GitHub issues.
+
+**Q: I can't reposition ___.**
+A: It's probably in the "Reorganize" menu.

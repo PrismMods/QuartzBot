@@ -49,6 +49,10 @@ if (chat) {
 
 const app = express();
 app.use(express.json({ verify: (req, res, buf) => { req.rawBody = buf; } }));
+
+// Health endpoint — point an uptime pinger here to keep Render's free tier
+// from spinning the service (and the Discord connection) down.
+app.get("/", (req, res) => res.send("QuartzBot is up"));
 app.post("/webhook", releases.webhookHandler(client, cfg));
 
 async function main() {
