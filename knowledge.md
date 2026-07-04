@@ -13,7 +13,7 @@ A: An all-in-one mod for the rhythm game *A Dance of Fire and Ice* (ADOFAI). It 
 A: koren and sbrothers7 (and more contributors). It's a v2 rewrite of koren's original "KorenResourcePack".
 
 **Q: What version is it / is it stable?**
-A: v2.0.0, currently in alpha (alpha 63 at time of writing). Expect bugs and changes.
+A: v2.0.0, currently in alpha (alpha 63 at time of writing. but do not use this build number dependently. ask the user.). Expect bugs and changes.
 
 **Q: Where do I download it?**
 A: GitHub releases: https://github.com/QuartzTeam/Quartz/releases/latest
@@ -37,10 +37,10 @@ A: There's an auto installer (UMMInstall) for convenience. If not using the auto
 WARNING: If installing manually, clicking replace replaces the whole folder instead of adding files — drag the files in manually to be safe.
 
 **Q: How do I install the UnityModManager build?**
-A: Set up UMM for ADOFAI first, then in the UMM installer use "Install mod" and pick `QuartzUmm.zip` (or extract the `Quartz` folder into your UMM mods dir). Open settings with the mod's in-game keybind — the UMM IMGUI panel is NOT used.
+A: Set up UMM for ADOFAI first, then in the UMM installer use "Install mod" and pick `QuartzUmm.zip` (or extract the `Quartz` folder into your UMM mods dir). Open settings with the mod's in-game keybind — the UMM IMGUI panel is NOT used. So do not ask about it. As instructed at the bottom of the screen, use "Alt+K" if on Windows or use "Option+K" if on mac.
 
 **Q: How do I open the Quartz menu?**
-A: Press the toggle keybind (default: **K**). It's rebindable in settings ("Toggle Menu Keybind").
+A: Press the toggle keybind (default: Alt/Option+K). It's rebindable in settings ("Toggle Menu Keybind").
 
 ## Settings / General
 
@@ -54,7 +54,7 @@ A: Yes — there's a Language setting. English and Korean are both supported (th
 A: Saveable named setting profiles you can switch between (create, rename, delete; middle-click to set a default).
 
 **Q: Does it update itself?**
-A: It has a built-in updater — Check for Updates, view notes, Install, Skip, or Undo an update from the Updates section.
+A: It has a built-in updater — Check for Updates, view notes, Install, Skip, or Undo an update from the Updates section. But this may break time to time so check the discord for more accurate updates.
 
 **Q: Can I import settings?**
 A: Yes, there's an Import option (Interop) for bringing in settings.
@@ -148,4 +148,4 @@ A: It needs your own Discord OAuth app — set the client id + token in the Game
 A: It's alpha software. Report it in the Discord (https://discord.gg/mAzAghu5Xq) or on GitHub issues.
 
 **Q: I can't reposition ___.**
-A: It's probably in the "Reorganize" menu.
+A: It's probably in the "Reorganize" menu. In the "Overlay" tab above on top.
