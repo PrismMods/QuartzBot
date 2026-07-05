@@ -55,10 +55,20 @@ app.use(express.json({ verify: (req, res, buf) => { req.rawBody = buf; } }));
 app.get("/", (req, res) => res.send("QuartzBot is up"));
 app.post("/webhook", releases.webhookHandler(client, cfg));
 
+const PORT = process.env.PORT || 3000;
+
 async function main() {
+    // Bind the port before anything slow (DB init, Discord login) — Render
+    // kills deploys whose port never opens, and it forwards traffic to the
+    // port in the PORT env var.
+    await new Promise((resolve, reject) => {
+        app.listen(PORT, () => {
+            console.log(`Webhook server listening on port ${PORT}`);
+            resolve();
+        }).on("error", reject);
+    });
     if (db) await db.init();
     await client.login(cfg.discordToken);
-    app.listen(3000, () => console.log("Webhook server listening on port 3000"));
 }
 
 async function shutdown() {

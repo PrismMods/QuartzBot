@@ -165,12 +165,77 @@ A: It's alpha software. Report it in the Discord (https://discord.gg/mAzAghu5Xq)
 **Q: I can't reposition ___.**
 A: It's probably in the "Reorganize" menu. In the "Overlay" tab above on top.
 
-# English to Korean Translation words.
+## English to Korean Translation words
+
 Reorganize: 재배치
-Keybind: 키바인드
-Discord: 디코
+Keybind: 단축키
+Discord: 디스코드
 Quartz: 쿼츠
-Toggle Menu Keybind: 메뉴 토글 키
+Toggle Menu Keybind: 메뉴 단축키
 Gameplay: 게임플레이
 Overlay: 오버레이
-Visual: 비쥬얼
+Visual: 비주얼
+Settings: 설정
+Profile: 프로필
+Language: 언어
+UI Scale: 화면 배율
+Window Opacity: 창 투명도
+Accent Color: 강조 색상
+Font: 폰트
+Import: 가져오기
+Editor: 에디터
+Update: 업데이트
+Check for Updates: 업데이트 확인
+Install: 설치
+Skip: 건너뛰기
+Undo: 되돌리기
+
+Key Limiter: 키 제한
+Chatter Blocker: 채터링 차단
+Judgement Restriction: 판정 제한
+Death Limit: 죽음 개수 제한
+Auto Deafen: 자동 헤드셋 음소거
+Tweaks: 트윅
+Optimizer: 최적화
+Effect Remover: 이펙트 제거
+Panels: 패널
+Enable Overlays: 오버레이 활성화
+Combo: 콤보
+Judgement: 판정
+Key Viewer: 키 뷰어
+Progress Bar: 진행도 바
+Song Title: 노래 제목
+UI Hider: UI 숨기기
+Planet Colors: 행성 색상
+Otto Icon: Otto 아이콘
+Nostalgia: 추억
+Status: 상태
+Play Count: 플레이 횟수
+
+Planet: 행성
+Accuracy: 정확도
+Attempt: 시도
+Total Attempts: 총 시도
+Best Progress: 최고 진행도
+Progress: 진행도
+Checkpoint: 체크포인트
+Holds: 홀드
+Auto KPS: 자동 KPS
+
+Perfect: 정확
+Early Perfect: 빠름
+Late Perfect: 느림
+Very Early: 빠름!
+Very Late: 느림!
+Too Early: 너무 빠름
+Too Late: 너무 느림
+Miss: 미스
+Overload: 과부하
+
+Mod: 모드
+Download: 다운로드
+Release: 릴리스
+Pre-release: 프리릴리스 / 알파 릴리스
+Version: 버전
+A Dance of Fire and Ice (ADOFAI): 얼불춤
+MelonLoader: 멜론로더
