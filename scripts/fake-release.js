@@ -21,13 +21,15 @@ const payload = {
     release: {
         name: `${tag} — Local webhook test`,
         tag_name: tag,
+        // Mirrors the current release format: no English header, Korean
+        // section introduced by "## 한국어 (Korean)", shared "---" trailer.
         body: [
-            "## English",
-            "",
             "### Fixed",
             "- Test entry: this message was posted by scripts/fake-release.js.",
             "",
-            "## 한국어",
+            "---",
+            "",
+            "## 한국어 (Korean)",
             "",
             "### 수정",
             "- 테스트 항목: scripts/fake-release.js가 보낸 메시지입니다.",
